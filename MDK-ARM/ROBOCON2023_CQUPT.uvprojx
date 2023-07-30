@@ -694,6 +694,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\pid_exfunc.c</FilePath>
             </File>
+            <File>
+              <FileName>control_maskcar.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\control_maskcar.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
