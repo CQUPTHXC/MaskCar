@@ -9,13 +9,12 @@
 #include "pid.h"
 #include "elog.h"
 
-
-
+#include "bsp_sbus.h"
 
 
 #define CHASSIS_CAN hcan1
 #define DECE_RATIO_ER_TR  12
-//extern rc_info_t rc;
+extern rc_info_t rc;
 //È«
 
 static void chassis_init(void);
@@ -50,9 +49,9 @@ void chassis_task(void const * argument)
 	/* Æô¶¯elog */
 	elog_start();
 	
-
+		
     chassis_init();
-
+		dbus_uart_init();
     while(1)
     {       
 	
@@ -75,7 +74,7 @@ void chassis_task(void const * argument)
 		DJ_Set_Motor_Position(0,3600);
 		dj_motor_handler(5,2);
 		//dj_set_motor_Group_A(&hcan1,pid1.parameter.out,pid1.parameter.out, pid1.parameter.out,pid1.parameter.out);
-
+			elog_raw_output(":%f,%f,%f,%f\n",rc.ch1,rc.ch2,rc.ch3,rc.ch4);
         osDelay(5);
 
     }

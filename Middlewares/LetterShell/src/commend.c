@@ -120,6 +120,7 @@ int reboot(int argc, char** argv)
 	elog_w("CMD_REBOOT","The system will reboot...");
 	osDelay(100);
 	HAL_NVIC_SystemReset();
+	return 0;
 
 }SHELL_EXPORT_CMD(SHELL_CMD_PERMISSION(0)|SHELL_CMD_TYPE(SHELL_TYPE_CMD_MAIN), reboot, reboot, spi flash driver commends);
 

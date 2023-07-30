@@ -16,7 +16,7 @@ enum{
 };
 
 typedef enum{
-	DJ_M0 = 0U,
+	DJ_M0 = 0,
 	DJ_M1,
 	DJ_M2,
 	DJ_M3,

@@ -22,7 +22,6 @@
 #include "task.h"
 #include "main.h"
 #include "cmsis_os.h"
-#include "semphr.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -54,14 +53,14 @@ osThreadId_t testTaskHandle;
 const osThreadAttr_t testTask_attributes = {
   .name = "testTask",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityBelowNormal ,
+  .priority = (osPriority_t) osPriorityBelowNormal,
 };
 /* Definitions for chassisTask */
 osThreadId_t chassisTaskHandle;
 const osThreadAttr_t chassisTask_attributes = {
   .name = "chassisTask",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t)osPriorityHigh ,
+  .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for ledTask */
 osThreadId_t ledTaskHandle;
@@ -83,11 +82,6 @@ const osThreadAttr_t YuntaiTask_attributes = {
   .name = "YuntaiTask",
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
-};
-/* Definitions for shellMutex */
-osMutexId_t shellMutexHandle;
-const osMutexAttr_t shellMutex_attributes = {
-  .name = "shellMutex"
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -112,9 +106,6 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
-  /* Create the mutex(es) */
-  /* creation of shellMutex */
-  shellMutexHandle = osMutexNew(&shellMutex_attributes);
 
   /* USER CODE BEGIN RTOS_MUTEX */
 	    xMutex_Usart1 = xSemaphoreCreateRecursiveMutex();
