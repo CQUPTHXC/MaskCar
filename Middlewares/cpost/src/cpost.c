@@ -9,6 +9,7 @@
  * 
  */
 #include "cpost.h"
+#include "stm32f4xx.h"
 
 
 CpostHandler cposhHandlers[CPOST_MAX_HANDLER_SIZE] = {0};

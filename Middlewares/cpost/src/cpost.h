@@ -23,12 +23,12 @@
 /**
  * @brief 最大handler数量
  */
-#define     CPOST_MAX_HANDLER_SIZE      16
+#define     CPOST_MAX_HANDLER_SIZE      32
 
 /**
  * @brief 获取系统tick函数
  */
-#define     CPOST_GET_TICK()            0
+#define     CPOST_GET_TICK()            HAL_GetTick()
 
 /**
  * @brief tick最大值

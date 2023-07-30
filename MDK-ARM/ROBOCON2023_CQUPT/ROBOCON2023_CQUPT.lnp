@@ -54,8 +54,11 @@
 "robocon2023_cqupt\kfifo.o"
 "robocon2023_cqupt\pid.o"
 "robocon2023_cqupt\pid_exfunc.o"
+"robocon2023_cqupt\control_maskcar.o"
 "robocon2023_cqupt\chassis_task.o"
 "robocon2023_cqupt\test_task.o"
+"robocon2023_cqupt\cevent.o"
+"robocon2023_cqupt\cpost.o"
 --strict --scatter "ROBOCON2023_CQUPT\ROBOCON2023_CQUPT.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

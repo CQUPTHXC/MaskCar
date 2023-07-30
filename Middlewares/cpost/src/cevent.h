@@ -36,7 +36,7 @@
  *        `CEVENT_SPEED_OPTIMIZE` 打开且 `CEVENT_BUFFER_SIZE` 配置为 `0` 时，
  *        需要配置这个宏
  */
-#define     CEVENT_MALLOC(x)        0
+#define     CEVENT_MALLOC(x)        malloc(x)
 
 #ifndef SECTION
     #if defined(__CC_ARM) || (defined(__ARMCC_VERSION) && __ARMCC_VERSION >= 6000000)
