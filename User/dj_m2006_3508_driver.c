@@ -113,7 +113,7 @@ void dj_set_motor_mode(DJ_Motor_ID id,uint8_t mode)
 
 
 
-void DJ_Set_Motor_Speed(DJ_Motor_ID id,uint32_t speed)
+void DJ_Set_Motor_Speed(DJ_Motor_ID id,float speed)
 {
 	
 	if(id>DJ_M7){
@@ -126,7 +126,7 @@ void DJ_Set_Motor_Speed(DJ_Motor_ID id,uint32_t speed)
 	}
 }
 
-void DJ_Set_Motor_Position(DJ_Motor_ID id,uint32_t pos)
+void DJ_Set_Motor_Position(DJ_Motor_ID id,float pos)
 {
 	if(id>DJ_M7){
 		PID_Enable(&motor_can2_pos_pid[(id-8)]);

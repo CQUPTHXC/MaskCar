@@ -54,28 +54,47 @@ void chassis_task(void const * argument)
 		dbus_uart_init();
     while(1)
     {       
-	
-//const motor_measure_t* motor1 = get_chassis_motor_measure_point(0);
+//
+		static float r=34.9;
+		static float angle=0;
 
-		//PID_Sst_Target(&pid1,target);
-//		PID_Sst_Target(&pid2,target*0.88824);
-//				//printf(" rpm %i\r\n",motor1->speed_rpm);
+		if(rc.ch1<0)
+		{
+			r=34.9 + 1.f/(float)(rc.ch1);
+		}else
+		{
+			r=-34.9 - 1.f/(float)(rc.ch1);
+		}
+		angle=asin(20/r) * 180.0/3.1416;
+		
+		
+		DJ_Set_Motor_Speed(0,rc.ch2*4);
+		//DJ_Set_Motor_Position(1,rc.ch1/67*3);
+		DJ_Set_Motor_Position(1,angle);
+			
+		DJ_Set_Motor_Speed(2,rc.ch2*4);
+		DJ_Set_Motor_Position(3,0);
+		//DJ_Set_Motor_Position(1,rc.ch1/67*3);
+		
+		DJ_Set_Motor_Speed(4,rc.ch2*4);
+		DJ_Set_Motor_Position(5,angle);
+		
 
-//		PID_Sst_Present(&pid1,motor1->speed_rpm);
-//		PID_Sst_Present(&pid2,((float)motor1->total_angle/819.2f));
-//		pid2.parameter.kp=p;
-//		pid2.parameter.ki=i;
-//		pid2.parameter.kd=d;
-//		PID_Hander(&pid2,10);
-//		PID_Sst_Target(&pid1,pid2.parameter.out);
-//		PID_Hander(&pid1,10);
-//		
-		//DJ_Set_Motor_Speed(0,360);
-		DJ_Set_Motor_Position(0,3600);
+
+
+		DJ_Set_Motor_Speed(8,-rc.ch2*4);
+		DJ_Set_Motor_Position(9,angle);
+		
+		DJ_Set_Motor_Speed(10,-rc.ch2*4);
+		DJ_Set_Motor_Position(11,0);
+		
+		DJ_Set_Motor_Speed(12,-rc.ch2*4);
+		DJ_Set_Motor_Position(13,angle);
+		
 		dj_motor_handler(5,2);
-		//dj_set_motor_Group_A(&hcan1,pid1.parameter.out,pid1.parameter.out, pid1.parameter.out,pid1.parameter.out);
-			elog_raw_output(":%f,%f,%f,%f\n",rc.ch1,rc.ch2,rc.ch3,rc.ch4);
-        osDelay(5);
+		
+		elog_raw_output(":%f,%f,%f,%f\n",rc.ch1,rc.ch2,rc.ch3,rc.ch4);        
+		osDelay(5);
 
     }
 }

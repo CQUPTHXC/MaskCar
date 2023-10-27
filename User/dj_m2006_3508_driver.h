@@ -1,7 +1,7 @@
 #ifndef DJ_M2006_3508_DRIVER_H
 #define DJ_M2006_3508_DRIVER_H
 #ifdef __cplusplus
-extern "C"
+extern "C"  
 {
 #endif
 
@@ -94,8 +94,8 @@ void set_motor_allGroup(CAN_HandleTypeDef *_hcan, int16_t iq1, int16_t iq2, int1
 
 
 
-void DJ_Set_Motor_Position(DJ_Motor_ID id,uint32_t pos);
-void DJ_Set_Motor_Speed(DJ_Motor_ID id,uint32_t speed);
+void DJ_Set_Motor_Position(DJ_Motor_ID id,float pos);
+void DJ_Set_Motor_Speed(DJ_Motor_ID id,float speed);
 
 
 

@@ -51,7 +51,7 @@ I (../Core/Inc/spi.h)(0x64C5F89B)
 I (../Core/Inc/tim.h)(0x64C5F89B)
 I (../Core/Inc/usart.h)(0x64C5F89B)
 I (../Core/Inc/gpio.h)(0x64C5F89B)
-I (..\User\dj_m2006_3508_driver.h)(0x64C60243)
+I (..\User\dj_m2006_3508_driver.h)(0x64CFA4ED)
 F (../Core/Src/gpio.c)(0x64C5F89B)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Middlewares\LetterShell\src -I ..\Middlewares\easylogger\inc -I ..\Middlewares\cpost\src -I ..\Middlewares\easylogger\port -I ..\User -I ..\Middlewares\cpost\src-IC:\Users\Lenovo\IdeaProjects\untitled\src\Calculation\MaskCar\MDK-ARM\RTE\_ROBOCON2023_CQUPT-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F427xx -DUSE_HAL_DRIVER -DSTM32F427xx-o robocon2023_cqupt\gpio.o --omf_browse robocon2023_cqupt\gpio.crf --depend robocon2023_cqupt\gpio.d)
 I (../Core/Inc/gpio.h)(0x64C5F89B)
 I (../Core/Inc/main.h)(0x64C5F89B)
@@ -87,7 +87,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x6400A7B9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6400A7B9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6400A7B9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6400A7B9)
-F (../Core/Src/freertos.c)(0x64C6022F)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Middlewares\LetterShell\src -I ..\Middlewares\easylogger\inc -I ..\Middlewares\cpost\src -I ..\Middlewares\easylogger\port -I ..\User -I ..\Middlewares\cpost\src-IC:\Users\Lenovo\IdeaProjects\untitled\src\Calculation\MaskCar\MDK-ARM\RTE\_ROBOCON2023_CQUPT-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F427xx -DUSE_HAL_DRIVER -DSTM32F427xx-o robocon2023_cqupt\freertos.o --omf_browse robocon2023_cqupt\freertos.crf --depend robocon2023_cqupt\freertos.d)
+F (../Core/Src/freertos.c)(0x64C6098E)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Middlewares\LetterShell\src -I ..\Middlewares\easylogger\inc -I ..\Middlewares\cpost\src -I ..\Middlewares\easylogger\port -I ..\User -I ..\Middlewares\cpost\src-IC:\Users\Lenovo\IdeaProjects\untitled\src\Calculation\MaskCar\MDK-ARM\RTE\_ROBOCON2023_CQUPT-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F427xx -DUSE_HAL_DRIVER -DSTM32F427xx-o robocon2023_cqupt\freertos.o --omf_browse robocon2023_cqupt\freertos.crf --depend robocon2023_cqupt\freertos.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x6400A733)
 I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -132,6 +132,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6400A7B9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6400A7B9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x6400A733)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x6400A733)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x6400A733)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x6400A733)
 F (../Core/Src/can.c)(0x64C5F89B)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Middlewares\LetterShell\src -I ..\Middlewares\easylogger\inc -I ..\Middlewares\cpost\src -I ..\Middlewares\easylogger\port -I ..\User -I ..\Middlewares\cpost\src-IC:\Users\Lenovo\IdeaProjects\untitled\src\Calculation\MaskCar\MDK-ARM\RTE\_ROBOCON2023_CQUPT-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F427xx -DUSE_HAL_DRIVER -DSTM32F427xx-o robocon2023_cqupt\can.o --omf_browse robocon2023_cqupt\can.crf --depend robocon2023_cqupt\can.d)
 I (../Core/Inc/can.h)(0x64C5F89B)
 I (../Core/Inc/main.h)(0x64C5F89B)
@@ -1572,7 +1574,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x6400A733)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x6400A733)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x6400A733)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x6400A733)
-F (..\User\dj_m2006_3508_driver.c)(0x64C5F89B)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Middlewares\LetterShell\src -I ..\Middlewares\easylogger\inc -I ..\Middlewares\cpost\src -I ..\Middlewares\easylogger\port -I ..\User -I ..\Middlewares\cpost\src-IC:\Users\Lenovo\IdeaProjects\untitled\src\Calculation\MaskCar\MDK-ARM\RTE\_ROBOCON2023_CQUPT-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F427xx -DUSE_HAL_DRIVER -DSTM32F427xx-o robocon2023_cqupt\dj_m2006_3508_driver.o --omf_browse robocon2023_cqupt\dj_m2006_3508_driver.crf --depend robocon2023_cqupt\dj_m2006_3508_driver.d)
+F (..\User\dj_m2006_3508_driver.c)(0x64C60B0B)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Middlewares\LetterShell\src -I ..\Middlewares\easylogger\inc -I ..\Middlewares\cpost\src -I ..\Middlewares\easylogger\port -I ..\User -I ..\Middlewares\cpost\src-IC:\Users\Lenovo\IdeaProjects\untitled\src\Calculation\MaskCar\MDK-ARM\RTE\_ROBOCON2023_CQUPT-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F427xx -DUSE_HAL_DRIVER -DSTM32F427xx-o robocon2023_cqupt\dj_m2006_3508_driver.o --omf_browse robocon2023_cqupt\dj_m2006_3508_driver.crf --depend robocon2023_cqupt\dj_m2006_3508_driver.d)
 I (../Core/Inc/can.h)(0x64C5F89B)
 I (../Core/Inc/main.h)(0x64C5F89B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6400A7B9)
@@ -1609,7 +1611,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6400A7B9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6400A7B9)
 I (..\User\pid.h)(0x64C5F89B)
 I (D:\Keil_v5\ARM\ARMCC\include\float.h)(0x57F606B6)
-I (..\User\dj_m2006_3508_driver.h)(0x64C60243)
+I (..\User\dj_m2006_3508_driver.h)(0x64CFA4ED)
 F (..\User\kfifo.c)(0x64C5F89B)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Middlewares\LetterShell\src -I ..\Middlewares\easylogger\inc -I ..\Middlewares\cpost\src -I ..\Middlewares\easylogger\port -I ..\User -I ..\Middlewares\cpost\src-IC:\Users\Lenovo\IdeaProjects\untitled\src\Calculation\MaskCar\MDK-ARM\RTE\_ROBOCON2023_CQUPT-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F427xx -DUSE_HAL_DRIVER -DSTM32F427xx-o robocon2023_cqupt\kfifo.o --omf_browse robocon2023_cqupt\kfifo.crf --depend robocon2023_cqupt\kfifo.d)
 I (..\User\kfifo.h)(0x64C5F89B)
 I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
@@ -1625,7 +1627,7 @@ I (D:\Keil_v5\ARM\ARMCC\include\float.h)(0x57F606B6)
 I (D:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x57F606B8)
 F (..\User\control_maskcar.c)(0x64C5F89B)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Middlewares\LetterShell\src -I ..\Middlewares\easylogger\inc -I ..\Middlewares\cpost\src -I ..\Middlewares\easylogger\port -I ..\User -I ..\Middlewares\cpost\src-IC:\Users\Lenovo\IdeaProjects\untitled\src\Calculation\MaskCar\MDK-ARM\RTE\_ROBOCON2023_CQUPT-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F427xx -DUSE_HAL_DRIVER -DSTM32F427xx-o robocon2023_cqupt\control_maskcar.o --omf_browse robocon2023_cqupt\control_maskcar.crf --depend robocon2023_cqupt\control_maskcar.d)
 I (..\User\control_maskcar.h)(0x64C5F89B)
-I (..\User\dj_m2006_3508_driver.h)(0x64C60243)
+I (..\User\dj_m2006_3508_driver.h)(0x64CFA4ED)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
 I (../Core/Inc/can.h)(0x64C5F89B)
 I (../Core/Inc/main.h)(0x64C5F89B)
@@ -1701,7 +1703,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6400A7B9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6400A7B9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6400A7B9)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
-F (..\User\Tasks\chassis_task.c)(0x64C5FFCD)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Middlewares\LetterShell\src -I ..\Middlewares\easylogger\inc -I ..\Middlewares\cpost\src -I ..\Middlewares\easylogger\port -I ..\User -I ..\Middlewares\cpost\src-IC:\Users\Lenovo\IdeaProjects\untitled\src\Calculation\MaskCar\MDK-ARM\RTE\_ROBOCON2023_CQUPT-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F427xx -DUSE_HAL_DRIVER -DSTM32F427xx-o robocon2023_cqupt\chassis_task.o --omf_browse robocon2023_cqupt\chassis_task.crf --depend robocon2023_cqupt\chassis_task.d)
+F (..\User\Tasks\chassis_task.c)(0x653B7E3E)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Middlewares\LetterShell\src -I ..\Middlewares\easylogger\inc -I ..\Middlewares\cpost\src -I ..\Middlewares\easylogger\port -I ..\User -I ..\Middlewares\cpost\src-IC:\Users\Lenovo\IdeaProjects\untitled\src\Calculation\MaskCar\MDK-ARM\RTE\_ROBOCON2023_CQUPT-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F427xx -DUSE_HAL_DRIVER -DSTM32F427xx-o robocon2023_cqupt\chassis_task.o --omf_browse robocon2023_cqupt\chassis_task.crf --depend robocon2023_cqupt\chassis_task.d)
 I (..\User\Tasks\chassis_task.h)(0x64C5F89B)
 I (../Core/Inc/main.h)(0x64C5F89B)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6400A7B9)
@@ -1749,7 +1751,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x6400A733)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x6400A733)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x6400A733)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
-I (..\User\dj_m2006_3508_driver.h)(0x64C60243)
+I (..\User\dj_m2006_3508_driver.h)(0x64CFA4ED)
 I (../Core/Inc/can.h)(0x64C5F89B)
 I (..\User\pid.h)(0x64C5F89B)
 I (D:\Keil_v5\ARM\ARMCC\include\float.h)(0x57F606B6)
@@ -1804,7 +1806,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x6400A7B9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6400A7B9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6400A7B9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6400A7B9)
-I (..\User\dj_m2006_3508_driver.h)(0x64C60243)
+I (..\User\dj_m2006_3508_driver.h)(0x64CFA4ED)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
 I (..\User\pid.h)(0x64C5F89B)
 I (D:\Keil_v5\ARM\ARMCC\include\float.h)(0x57F606B6)

@@ -27,14 +27,38 @@ Project File Date:  07/30/2023
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ROBOCON2023_CQUPT'
-compiling freertos.c...
-../Core/Src/freertos.c(48): error:  #20: identifier "SemaphoreHandle_t" is undefined
-  SemaphoreHandle_t xMutex_Usart1;
-../Core/Src/freertos.c(111): warning:  #223-D: function "xSemaphoreCreateRecursiveMutex" declared implicitly
-  	    xMutex_Usart1 = xSemaphoreCreateRecursiveMutex();
-../Core/Src/freertos.c: 1 warning, 1 error
-compiling commend.c...
-"ROBOCON2023_CQUPT\ROBOCON2023_CQUPT.axf" - 1 Error(s), 1 Warning(s).
+compiling chassis_task.c...
+..\User\Tasks\chassis_task.c(63): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  			r=34.9 + 1.f/(float)(rc.ch1);
+..\User\Tasks\chassis_task.c(71): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Speed(0,rc.ch2*4);
+..\User\Tasks\chassis_task.c(73): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Position(1,angle);
+..\User\Tasks\chassis_task.c(75): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Speed(2,rc.ch2*4);
+..\User\Tasks\chassis_task.c(76): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Position(3,0);
+..\User\Tasks\chassis_task.c(79): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Speed(4,rc.ch2*4);
+..\User\Tasks\chassis_task.c(80): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Position(5,angle);
+..\User\Tasks\chassis_task.c(85): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Speed(8,-rc.ch2*4);
+..\User\Tasks\chassis_task.c(86): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Position(9,angle);
+..\User\Tasks\chassis_task.c(88): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Speed(10,-rc.ch2*4);
+..\User\Tasks\chassis_task.c(89): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Position(11,0);
+..\User\Tasks\chassis_task.c(91): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Speed(12,-rc.ch2*4);
+..\User\Tasks\chassis_task.c(92): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Position(13,angle);
+..\User\Tasks\chassis_task.c: 13 warnings, 0 errors
+linking...
+Program Size: Code=50288 RO-data=3000 RW-data=372 ZI-data=33692  
+FromELF: creating hex file...
+"ROBOCON2023_CQUPT\ROBOCON2023_CQUPT.axf" - 0 Error(s), 13 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -52,8 +76,7 @@ Package Vendor: ARM
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.0.0
-Target not created.
-Build Time Elapsed:  00:00:04
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>
