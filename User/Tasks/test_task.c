@@ -19,7 +19,7 @@
 		extern PID_T pid1;
 		extern PID_T pid2;
 		extern float p,i,d;
-
+int cnt=0;
 void test_task(void const * argument)
 {
 //	const rc_info_t* _rc = get_remote_control_point();
@@ -34,8 +34,8 @@ void test_task(void const * argument)
 
 			//log_d(" t:%.0f,%.0f,%.0f",pid1.parameter.present,pid1.parameter.target,pid1.parameter.out);
 
-
-		osDelay(40);
+		cnt++;
+		osDelay(100);
 
 	}
 }

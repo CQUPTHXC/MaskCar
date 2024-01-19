@@ -21,44 +21,24 @@ Target DLL:      CMSIS_AGDI.dll V1.27.0.0
 Dialog DLL:      TCM.DLL V1.21.0.0
  
 <h2>Project:</h2>
-C:\Users\Lenovo\IdeaProjects\untitled\src\Calculation\MaskCar\MDK-ARM\ROBOCON2023_CQUPT.uvprojx
-Project File Date:  07/30/2023
+E:\gitdesk\project\MaskCar\MDK-ARM\ROBOCON2023_CQUPT.uvprojx
+Project File Date:  01/19/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ROBOCON2023_CQUPT'
 compiling chassis_task.c...
-..\User\Tasks\chassis_task.c(63): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			r=34.9 + 1.f/(float)(rc.ch1);
-..\User\Tasks\chassis_task.c(71): warning:  #188-D: enumerated type mixed with another type
-  		DJ_Set_Motor_Speed(0,rc.ch2*4);
-..\User\Tasks\chassis_task.c(73): warning:  #188-D: enumerated type mixed with another type
-  		DJ_Set_Motor_Position(1,angle);
-..\User\Tasks\chassis_task.c(75): warning:  #188-D: enumerated type mixed with another type
-  		DJ_Set_Motor_Speed(2,rc.ch2*4);
-..\User\Tasks\chassis_task.c(76): warning:  #188-D: enumerated type mixed with another type
-  		DJ_Set_Motor_Position(3,0);
-..\User\Tasks\chassis_task.c(79): warning:  #188-D: enumerated type mixed with another type
-  		DJ_Set_Motor_Speed(4,rc.ch2*4);
-..\User\Tasks\chassis_task.c(80): warning:  #188-D: enumerated type mixed with another type
-  		DJ_Set_Motor_Position(5,angle);
-..\User\Tasks\chassis_task.c(85): warning:  #188-D: enumerated type mixed with another type
-  		DJ_Set_Motor_Speed(8,-rc.ch2*4);
-..\User\Tasks\chassis_task.c(86): warning:  #188-D: enumerated type mixed with another type
-  		DJ_Set_Motor_Position(9,angle);
-..\User\Tasks\chassis_task.c(88): warning:  #188-D: enumerated type mixed with another type
-  		DJ_Set_Motor_Speed(10,-rc.ch2*4);
-..\User\Tasks\chassis_task.c(89): warning:  #188-D: enumerated type mixed with another type
-  		DJ_Set_Motor_Position(11,0);
-..\User\Tasks\chassis_task.c(91): warning:  #188-D: enumerated type mixed with another type
-  		DJ_Set_Motor_Speed(12,-rc.ch2*4);
-..\User\Tasks\chassis_task.c(92): warning:  #188-D: enumerated type mixed with another type
-  		DJ_Set_Motor_Position(13,angle);
-..\User\Tasks\chassis_task.c: 13 warnings, 0 errors
+..\User\Tasks\chassis_task.c(70): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Speed(0,1500);
+..\User\Tasks\chassis_task.c(72): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Speed(1,-1500);
+..\User\Tasks\chassis_task.c(74): warning:  #188-D: enumerated type mixed with another type
+  		DJ_Set_Motor_Speed(2,2500);
+..\User\Tasks\chassis_task.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=50288 RO-data=3000 RW-data=372 ZI-data=33692  
+Program Size: Code=47112 RO-data=2920 RW-data=368 ZI-data=33696  
 FromELF: creating hex file...
-"ROBOCON2023_CQUPT\ROBOCON2023_CQUPT.axf" - 0 Error(s), 13 Warning(s).
+"ROBOCON2023_CQUPT\ROBOCON2023_CQUPT.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -69,14 +49,14 @@ Package Vendor: ARM
    * Component: CORE Version: 5.0.0
 
 <h2>Collection of Component include folders:</h2>
-  C:\Users\Lenovo\IdeaProjects\untitled\src\Calculation\MaskCar\MDK-ARM\RTE\_ROBOCON2023_CQUPT
+  E:\gitdesk\project\MaskCar\MDK-ARM\RTE\_ROBOCON2023_CQUPT
   D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include
   D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.0.0
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

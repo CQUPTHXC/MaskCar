@@ -16,12 +16,11 @@
 #define DECE_RATIO_ER_TR  12
 extern rc_info_t rc;
 //ȫ
-
+extern int cnt;
 static void chassis_init(void);
 PID_T pid1;
 PID_T pid2;
 float p=78.9f,i=0.000009f,d=45.f,target=3600;
-
 
 
 
@@ -55,45 +54,26 @@ void chassis_task(void const * argument)
     while(1)
     {       
 //
-		static float r=34.9;
-		static float angle=0;
+//		static float r=34.9;
+//		static float angle=0;
 
-		if(rc.ch1<0)
-		{
-			r=34.9 + 1.f/(float)(rc.ch1);
-		}else
-		{
-			r=-34.9 - 1.f/(float)(rc.ch1);
-		}
-		angle=asin(20/r) * 180.0/3.1416;
+//		if(rc.ch1<0)
+//		{
+//			r=34.9 + 1.f/(float)(rc.ch1);
+//		}else
+//		{
+//			r=-34.9 - 1.f/(float)(rc.ch1);
+//		}
+//		angle=asin(20/r) * 180.0/3.1416;
 		
 		
-		DJ_Set_Motor_Speed(0,rc.ch2*4);
-		//DJ_Set_Motor_Position(1,rc.ch1/67*3);
-		DJ_Set_Motor_Position(1,angle);
-			
-		DJ_Set_Motor_Speed(2,rc.ch2*4);
-		DJ_Set_Motor_Position(3,0);
-		//DJ_Set_Motor_Position(1,rc.ch1/67*3);
+		DJ_Set_Motor_Speed(0,1500);
 		
-		DJ_Set_Motor_Speed(4,rc.ch2*4);
-		DJ_Set_Motor_Position(5,angle);
+		DJ_Set_Motor_Speed(1,-1500);
 		
-
-
-
-		DJ_Set_Motor_Speed(8,-rc.ch2*4);
-		DJ_Set_Motor_Position(9,angle);
-		
-		DJ_Set_Motor_Speed(10,-rc.ch2*4);
-		DJ_Set_Motor_Position(11,0);
-		
-		DJ_Set_Motor_Speed(12,-rc.ch2*4);
-		DJ_Set_Motor_Position(13,angle);
-		
+		DJ_Set_Motor_Speed(2,2500);
 		dj_motor_handler(5,2);
-		
-		elog_raw_output(":%f,%f,%f,%f\n",rc.ch1,rc.ch2,rc.ch3,rc.ch4);        
+		//elog_raw_output(":%f,%f,%f,%f\n",rc.ch1,rc.ch2,rc.ch3,rc.ch4); 
 		osDelay(5);
 
     }

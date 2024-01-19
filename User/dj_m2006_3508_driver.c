@@ -1,7 +1,7 @@
 #include "can.h"
 #include "pid.h"
 #include "dj_m2006_3508_driver.h"
-
+#include "elog.h"
 void dj_motor_measure_updata(motor_measure_t *motor, uint8_t Rx_Data[]);
 void get_motor_offset(motor_measure_t *motor, uint8_t Rx_Data[]);
 
@@ -52,6 +52,7 @@ void dj_motor_handler(uint16_t cycle,uint16_t ExecutionTimes)
 		PID_Hander(&motor_can2_speed_pid[i],cycle);
 	
 	}
+	elog_raw_output("%f\n",(float)motor_can1[5].speed_rpm);
 	////////////以下define仅仅为了缩短函数的长度/////////////////////////////
 #define can1_pid0_out motor_can1_speed_pid[0].parameter.out
 #define can1_pid1_out motor_can1_speed_pid[1].parameter.out
@@ -77,6 +78,13 @@ void dj_motor_handler(uint16_t cycle,uint16_t ExecutionTimes)
 	
 	set_motor_allGroup(&hcan2,can2_pid0_out,can2_pid1_out,can2_pid2_out,
 	can2_pid3_out,can2_pid4_out,can2_pid5_out,can2_pid6_out,can2_pid7_out);
+
+    set_6020_allGroup(&hcan1,can1_pid0_out,can1_pid1_out,can1_pid2_out,
+	can1_pid3_out,can1_pid4_out,can1_pid5_out,can1_pid6_out,can1_pid7_out);
+
+    set_6020_allGroup(&hcan2,can2_pid0_out,can2_pid1_out,can2_pid2_out,
+	can2_pid3_out,can2_pid4_out,can2_pid5_out,can2_pid6_out,can2_pid7_out);
+    
 }
 
 //0 速度 1 位置
@@ -119,8 +127,8 @@ void DJ_Set_Motor_Speed(DJ_Motor_ID id,float speed)
 	if(id>DJ_M7){
 		PID_Pause(&motor_can2_pos_pid[(id-8)]);
 		motor_can2_pos_pid[(id-8)].parameter.target = speed;
- 
-	}else{
+	}
+    else{
 		PID_Pause(&motor_can1_pos_pid[id]);
 		motor_can1_pos_pid[id].parameter.target = speed;
 	}
@@ -145,10 +153,18 @@ void DJ_Set_Motor_Position(DJ_Motor_ID id,float pos)
 void set_motor_allGroup(CAN_HandleTypeDef *_hcan, int16_t iq1, int16_t iq2, int16_t iq3, int16_t iq4,
                                 int16_t iq5, int16_t iq6, int16_t iq7, int16_t iq8)
 {
-    dj_set_motor_Group_A(_hcan, iq1, iq2, iq3, iq4);
+    
+		dj_set_motor_Group_A(_hcan, iq1, iq2, iq3, iq4);
     dj_set_motor_Group_B(_hcan, iq5, iq6, iq7, iq8);
 }
 
+void set_6020_allGroup(CAN_HandleTypeDef *_hcan, int16_t iq1, int16_t iq2, int16_t iq3, int16_t iq4,
+                                int16_t iq5, int16_t iq6, int16_t iq7, int16_t iq8)
+{
+		//因为标识符重复，避免出问题，注释掉
+    //dj_set_6020_Group_A(_hcan, iq1, iq2, iq3, iq4);
+    dj_set_6020_Group_B(_hcan, iq5, iq6, iq7, iq8);
+}
 
 /**
  * @Func		my_can_filter_init]
@@ -233,7 +249,10 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *_hcan)
     /********  CAN1 *******/
     if (_hcan->Instance == CAN1)
     {
+        if(CAN_RxHeader.StdId<0x209)
         i = CAN_RxHeader.StdId - CAN_Motor1_ID;
+        else
+        i = CAN_RxHeader.StdId - CAN_6020_ID1;
         if (motor_can1[i].msg_cnt <= 50) // 上电后接收50次矫正 50次之后正常接收数据
         {
             motor_can1[i].msg_cnt++;
@@ -246,7 +265,10 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *_hcan)
     else if (_hcan->Instance == CAN2)
     {
 
+        if(CAN_RxHeader.StdId<0x209)
         i = CAN_RxHeader.StdId - CAN_Motor1_ID;
+        else
+        i = CAN_RxHeader.StdId - CAN_6020_ID1;
         if (motor_can2[i].msg_cnt <= 50)
         {
             motor_can2[i].msg_cnt++;
@@ -422,6 +444,35 @@ void dj_set_motor_Group_B(CAN_HandleTypeDef *_hcan, int16_t iq1, int16_t iq2, in
 
     __Can_TxMessage(_hcan, 0, CAN_Motor_ALL_ID2, 8, (uint8_t *)data); // 0代表标准正
 }
+void dj_set_6020_Group_A(CAN_HandleTypeDef *_hcan, int16_t iq1, int16_t iq2, int16_t iq3, int16_t iq4)
+{
+
+    uint8_t data[8] = {0};
+    data[0] = iq1 >> 8;
+    data[1] = iq1;
+    data[2] = iq2 >> 8;
+    data[3] = iq2;
+    data[4] = iq3 >> 8;
+    data[5] = iq3;
+    data[6] = iq4 >> 8;
+    data[7] = iq4;
+
+    __Can_TxMessage(_hcan, 0, CAN_6020_ALL_ID, 8, (uint8_t *)data); // 0代表标准正
+}
+void dj_set_6020_Group_B(CAN_HandleTypeDef *_hcan, int16_t iq1, int16_t iq2, int16_t iq3, int16_t iq4) // 4个电机转向
+{
+    uint8_t data[8] = {0};
+    data[0] = iq1 >> 8;
+    data[1] = iq1;
+    data[2] = iq2 >> 8;
+    data[3] = iq2;
+    data[4] = iq3 >> 8;
+    data[5] = iq3;
+    data[6] = iq4 >> 8;
+    data[7] = iq4;
+
+    __Can_TxMessage(_hcan, 0, CAN_6020_ALL_ID2, 8, (uint8_t *)data); // 0代表标准正
+}
 /**
  * @brief          返回底盘电机 3508电机数据句柄
  * @param[in]      i: 电机编号,范围[0,7]
@@ -466,6 +517,17 @@ int dj_motor_init(void)
 		PID_Sst_Out_Limit(&motor_can2_pos_pid[i],20000);
 		PID_Sst_Integral_Limit(&motor_can2_pos_pid[i],200);
 	}
+	//为6020调pid
+	
+		PID_Init(&motor_can1_speed_pid[5],PID_POSITION_NULL,4.5f,0.4f,0.5f);
+		PID_Sst_Out_Limit(&motor_can1_speed_pid[5],30000);
+		PID_Sst_Integral_Limit(&motor_can1_speed_pid[5],2000);
+		PID_Sst_Bias_Dead_Zone(&motor_can1_speed_pid[5],20);
+
+		PID_Init(&motor_can1_pos_pid[5],PID_POSITION_NULL,20.f,0.f,0);
+		PID_Sst_Out_Limit(&motor_can1_pos_pid[5],20000);
+		PID_Sst_Integral_Limit(&motor_can1_pos_pid[5],200);
+		
 	
 	//////////////////
 	

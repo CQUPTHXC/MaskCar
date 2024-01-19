@@ -33,8 +33,15 @@ typedef enum{
 	DJ_M13,
 	DJ_M14,
 	DJ_M15,
-	DJ_M16,
-	DJ_M17,
+    //6020的id 1234和 2006&3508的id5678重复 以下暂时没用
+	  DJ_M6020_1,
+    DJ_M6020_2,
+    DJ_M6020_3,
+    DJ_M6020_4,
+    DJ_M6020_5,
+    DJ_M6020_6,
+    DJ_M6020_7,
+
 }DJ_Motor_ID;
 /*CAN发送或是接收的ID*/
 typedef enum {
@@ -50,6 +57,20 @@ typedef enum {
     CAN_Motor6_ID = 0x206,
     CAN_Motor7_ID = 0x207,
     CAN_Motor8_ID = 0x208,
+
+    CAN_6020_ALL_ID = 0X1FF,
+    CAN_6020_ID1 = 0x205,
+    CAN_6020_ID2 = 0x206,
+    CAN_6020_ID3 = 0x207,
+    CAN_6020_ID4 = 0x208,
+    //6020的id 1234和 2006&3508的id5678重复
+    CAN_6020_ALL_ID2 = 0X2FF,
+    CAN_6020_ID5 = 0x209,
+    CAN_6020_ID6 = 0x20A,
+    CAN_6020_ID7 = 0x20B,
+    CAN_6020_ID8 = 0x20C,
+
+
 
 } DJ_Motor_Message_ID;
 
@@ -98,12 +119,13 @@ void DJ_Set_Motor_Position(DJ_Motor_ID id,float pos);
 void DJ_Set_Motor_Speed(DJ_Motor_ID id,float speed);
 
 
+void dj_set_6020_Group_A(CAN_HandleTypeDef *_hcan, int16_t iq1, int16_t iq2, int16_t iq3, int16_t iq4);
+
+void dj_set_6020_Group_B(CAN_HandleTypeDef *_hcan, int16_t iq1, int16_t iq2, int16_t iq3, int16_t iq4);
 
 
-
-
-
-
+void set_6020_allGroup(CAN_HandleTypeDef *_hcan, int16_t iq1, int16_t iq2, int16_t iq3, int16_t iq4,
+                                int16_t iq5, int16_t iq6, int16_t iq7, int16_t iq8);
 
 
 
