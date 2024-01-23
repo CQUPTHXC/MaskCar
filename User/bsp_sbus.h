@@ -7,7 +7,7 @@
 
 #define UART_RX_DMA_SIZE (1024)
 #define DBUS_MAX_LEN     (50)
-#define DJI 0
+#define DJI 1
 
 #if DJI
 #define DBUS_BUFLEN      (18)

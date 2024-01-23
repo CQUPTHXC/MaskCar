@@ -1,10 +1,4 @@
 #include "cmsis_os.h"
-//#include "test_task.h"
-//#include "bsp_as5048.h"
-//#include "vofa_lower.h"
-//#include "bldc_interface.h"
-//#include "bsp_sbus.h"
-//#include "bsp_vesc.h"
 #include "can.h"
 #include "dj_m2006_3508_driver.h"
 #include "stdio.h"
@@ -15,27 +9,41 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include "elog.h"
-
+#include "bsp_sbus.h"
 		extern PID_T pid1;
 		extern PID_T pid2;
 		extern float p,i,d;
-int cnt=0;
+		extern rc_info_t rc;
 void test_task(void const * argument)
 {
-//	const rc_info_t* _rc = get_remote_control_point();
-//	Init_test_AS5048();
-			//log_d(" t:%.0f,%.0f,%.0f",pid1.parameter.present,pid1.parameter.target,pid1.parameter.out);
+
 
 	while(1)
 	{
+		if(rc.ch5==1){
+		DJ_Set_Motor_Speed(8,0);
+		
+		DJ_Set_Motor_Speed(9,0);
+		
+		DJ_Set_Motor_Speed(10,0);
+		}
+		else if(rc.ch5==3){
+		DJ_Set_Motor_Speed(8,1500);
+		
+		DJ_Set_Motor_Speed(9,-1500);
+		
+		DJ_Set_Motor_Speed(10,2500);
+		}
+		else if(rc.ch5==2){
+		DJ_Set_Motor_Speed(8,2500);
+		
+		DJ_Set_Motor_Speed(9,-2500);
+		
+		DJ_Set_Motor_Speed(10,2500);
+		}
+		
 
-		//Test_AS5048();
-			//elog_raw_output(" t:%.0f,%.0f,%.0f\r\n",pid2.parameter.present,pid2.parameter.target,pid2.parameter.out);
-
-			//log_d(" t:%.0f,%.0f,%.0f",pid1.parameter.present,pid1.parameter.target,pid1.parameter.out);
-
-		cnt++;
-		osDelay(100);
+		dj_motor_handler(5,2);
 
 	}
 }

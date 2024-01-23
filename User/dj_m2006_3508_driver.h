@@ -118,6 +118,8 @@ void set_motor_allGroup(CAN_HandleTypeDef *_hcan, int16_t iq1, int16_t iq2, int1
 void DJ_Set_Motor_Position(DJ_Motor_ID id,float pos);
 void DJ_Set_Motor_Speed(DJ_Motor_ID id,float speed);
 
+float DJ_Get_Motor_Position(DJ_Motor_ID id);
+float DJ_Get_Motor_Speed(DJ_Motor_ID id);
 
 void dj_set_6020_Group_A(CAN_HandleTypeDef *_hcan, int16_t iq1, int16_t iq2, int16_t iq3, int16_t iq4);
 

@@ -10,10 +10,11 @@
 #include "elog.h"
 
 #include "bsp_sbus.h"
-
+#include "tim.h"
 
 #define CHASSIS_CAN hcan1
 #define DECE_RATIO_ER_TR  12
+#define cos45 0.70711
 extern rc_info_t rc;
 //全
 extern int cnt;
@@ -22,7 +23,10 @@ PID_T pid1;
 PID_T pid2;
 float p=78.9f,i=0.000009f,d=45.f,target=3600;
 
-
+float wheel_speed1;
+float wheel_speed2;
+float wheel_speed3;
+float wheel_speed4;
 
 ///**
 //  * @brief          底盘任务，间隔 CHASSIS_CONTROL_TIME_MS 2ms
@@ -65,16 +69,27 @@ void chassis_task(void const * argument)
 //			r=-34.9 - 1.f/(float)(rc.ch1);
 //		}
 //		angle=asin(20/r) * 180.0/3.1416;
+			
+			
+		 wheel_speed1 = (float)rc.ch3*cos45 + (float)rc.ch4*cos45+(float)rc.ch2;
+		 wheel_speed1 =  wheel_speed1/10*19;
+     wheel_speed2 = (float)rc.ch3*cos45 - (float)rc.ch4*cos45+(float)rc.ch2;
+		 wheel_speed2 =  wheel_speed2/10*19;
+     wheel_speed3 = -(float)rc.ch3*cos45 - (float)rc.ch4*cos45+(float)rc.ch2;
+		 wheel_speed3 =  wheel_speed3/10*19;
+     wheel_speed4 = -(float)rc.ch3*cos45 + (float)rc.ch4*cos45+(float)rc.ch2;
+		 wheel_speed4 =  wheel_speed4/10*19;
 		
 		
-		DJ_Set_Motor_Speed(0,1500);
+		 DJ_Set_Motor_Speed(0,wheel_speed1);
+		 DJ_Set_Motor_Speed(1,wheel_speed2);    
+		 DJ_Set_Motor_Speed(2,wheel_speed3);
+		 DJ_Set_Motor_Speed(3,wheel_speed4);
 		
-		DJ_Set_Motor_Speed(1,-1500);
-		
-		DJ_Set_Motor_Speed(2,2500);
+	
 		dj_motor_handler(5,2);
-		//elog_raw_output(":%f,%f,%f,%f\n",rc.ch1,rc.ch2,rc.ch3,rc.ch4); 
-		osDelay(5);
+		//__HAL_TIM_SetCompare(&htim5,TIM_CHANNEL_4,1080);
+		//elog_raw_output("%.2f,%.2f,%.2f,%.2f\n",wheel_speed1,wheel_speed2,wheel_speed3,wheel_speed4);  
 
     }
 }

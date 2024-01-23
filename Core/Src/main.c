@@ -105,9 +105,11 @@ int main(void)
   MX_TIM4_Init();
   MX_TIM8_Init();
   MX_TIM2_Init();
+  MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
  userShellInit();
-dj_motor_init();
+ dj_motor_init();
+ HAL_TIM_PWM_Start(&htim5,TIM_CHANNEL_4);
   /* USER CODE END 2 */
 
   /* Init scheduler */

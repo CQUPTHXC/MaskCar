@@ -32,9 +32,19 @@ void dj_motor_handler(uint16_t cycle,uint16_t ExecutionTimes)
 	{
 		if(__time % ExecutionTimes == 0)
 		{
+			
+		if(i==5||i==6){
+			
 		///////////////////位置环更新当前值//////////////////////////////////
+		PID_Sst_Present(&motor_can1_pos_pid[i],motor_can1[i].total_angle/8.912f);
+		PID_Sst_Present(&motor_can2_pos_pid[i],motor_can2[i].total_angle/8.912f);
+			
+		}else{
+			
 		PID_Sst_Present(&motor_can1_pos_pid[i],motor_can1[i].total_angle/819.2f);
 		PID_Sst_Present(&motor_can2_pos_pid[i],motor_can2[i].total_angle/819.2f);
+		
+		}
 			//////////////////位置环pid处理//////////////////////////////////
 		PID_Hander(&motor_can1_pos_pid[i],cycle);
 		PID_Hander(&motor_can2_pos_pid[i],cycle);
@@ -52,7 +62,6 @@ void dj_motor_handler(uint16_t cycle,uint16_t ExecutionTimes)
 		PID_Hander(&motor_can2_speed_pid[i],cycle);
 	
 	}
-	elog_raw_output("%f\n",(float)motor_can1[5].speed_rpm);
 	////////////以下define仅仅为了缩短函数的长度/////////////////////////////
 #define can1_pid0_out motor_can1_speed_pid[0].parameter.out
 #define can1_pid1_out motor_can1_speed_pid[1].parameter.out
@@ -498,6 +507,7 @@ int dj_motor_init(void)
 	for(int i=0;i<8;++i)
 	{
 		//给pid中的参数給一个初值，保证至少可动，后面再根据情况具体调节
+		//默认pid对象为空载2006
 		PID_Init(&motor_can1_speed_pid[i],PID_POSITION_NULL,5.f,0.03f,1.0f);
 		PID_Sst_Out_Limit(&motor_can1_speed_pid[i],30000);
 		PID_Sst_Integral_Limit(&motor_can1_speed_pid[i],2000);
@@ -519,18 +529,42 @@ int dj_motor_init(void)
 	}
 	//为6020调pid
 	
-		PID_Init(&motor_can1_speed_pid[5],PID_POSITION_NULL,4.5f,0.4f,0.5f);
-		PID_Sst_Out_Limit(&motor_can1_speed_pid[5],30000);
-		PID_Sst_Integral_Limit(&motor_can1_speed_pid[5],2000);
-		PID_Sst_Bias_Dead_Zone(&motor_can1_speed_pid[5],20);
-
-		PID_Init(&motor_can1_pos_pid[5],PID_POSITION_NULL,20.f,0.f,0);
-		PID_Sst_Out_Limit(&motor_can1_pos_pid[5],20000);
-		PID_Sst_Integral_Limit(&motor_can1_pos_pid[5],200);
-		
+		PID_Init(&motor_can1_speed_pid[5],PID_POSITION_NULL,4.5f,0.4f,0.4f);
+		PID_Init(&motor_can1_pos_pid[5],PID_POSITION_NULL,0.125f,0.000000395f,0.5f);
+	
+		PID_Init(&motor_can2_speed_pid[4],PID_POSITION_NULL,4.5f,0.4f,0.4f);
+		PID_Init(&motor_can2_pos_pid[4],PID_POSITION_NULL,0.125f,0.000000395f,0.5f);
+	
+	//为3508调pid
+	
+		PID_Init(&motor_can1_speed_pid[0],PID_POSITION_NULL,3.0f,0.01f,0.01f);
+		PID_Init(&motor_can1_speed_pid[1],PID_POSITION_NULL,3.0f,0.01f,0.01f);
+		PID_Init(&motor_can1_speed_pid[2],PID_POSITION_NULL,3.0f,0.01f,0.01f);
+		PID_Init(&motor_can1_speed_pid[3],PID_POSITION_NULL,3.0f,0.01f,0.01f);
+	
 	
 	//////////////////
 	
 	///////////////////
     return 0;
+}
+
+float DJ_Get_Motor_Position(DJ_Motor_ID id){
+	
+	if(id>DJ_M7){
+		return motor_can2[id].total_angle/819.2f;
+	}
+  else{
+		return motor_can1[id].total_angle/819.2f;
+	}
+
+}
+float DJ_Get_Motor_Speed(DJ_Motor_ID id){
+
+	if(id>DJ_M7){
+		return (float)motor_can2[id].speed_rpm;
+	}
+  else{
+		return (float)motor_can1[id].speed_rpm;
+	}
 }
